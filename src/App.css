@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#f2f3f7] font-mont;
+}
+.modal-share-button {
+  @apply w-full flex justify-center items-center gap-2  bg-blue-500 px-6 py-2 rounded-lg capitalize text-white lg:text-lg hover:bg-blue-600 transition-colors text-xs;
+}
+.modal-download-button {
+  @apply flex justify-center items-center gap-2 border border-blue-500 px-6 py-2 capitalize text-blue-500 rounded-lg w-full hover:bg-blue-50 transition-colors text-xs lg:text-lg text-nowrap;
+}
+.modal-button-icon {
+  @apply lg:text-xl text-xs;
+}
+.modal-overlay {
+  @apply fixed  top-0 left-0 right-0 bottom-0 bg-stone-800/55 flex flex-col justify-center items-center transition-opacity;
+}
+.modal-invoice-header {
+  @apply bg-gray-50 p-4 flex justify-between items-center rounded-t-lg text-xs lg:text-lg;
+}
+.modal-table-header-text {
+  @apply font-semibold text-xs lg:text-lg;
+}
+.items-font {
+  @apply text-base lg:text-base font-semibold;
+}
+.invoice-review-button {
+  @apply w-full bg-blue-500 text-white px-6 py-3 rounded-lg font-normal hover:bg-blue-600 active:bg-blue-800 transition-colors;
+}
+.invoice-review-selection {
+  @apply focus:outline-none shadow-lg bg-white rounded-lg p-1 px-4 w-full text-center lg:text-lg text-base my-3 py-2 mb-10;
+}
+.invoice-review-incentives {
+  @apply w-full focus:outline-none rounded-lg bg-white  border border-gray-200 h-10 pl-4 mb-10;
+}
