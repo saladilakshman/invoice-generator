@@ -16,7 +16,7 @@ body {
   @apply lg:text-xl text-xs;
 }
 .modal-overlay {
-  @apply fixed  top-0 left-0 right-0 bottom-0 bg-stone-800/55 flex flex-col justify-center items-center transition-opacity;
+  @apply fixed  top-0 left-0 right-0 bottom-0 bg-stone-800/55 flex flex-col justify-center items-center transition-opacity z-10;
 }
 .modal-invoice-header {
   @apply bg-gray-50 p-4 flex justify-between items-center rounded-t-lg text-xs lg:text-lg;
