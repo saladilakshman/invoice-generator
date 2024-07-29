@@ -6,7 +6,6 @@ import html2pdf from "html2pdf.js";
 import "../App.css";
 const Modal = () => {
   const { state, dispatch } = useContext(InvoiceProvider);
-  console.log(state);
   const snapshot = document.querySelector(".layout-snapshot");
   const opt = {
     margin: 1,

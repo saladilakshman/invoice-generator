@@ -135,18 +135,18 @@ function App() {
       };
     } else return state;
   };
-  // const initializer = (initial) => {
-  //   const localData = window.localStorage.getItem("invoice");
-  //   return localData ? JSON.parse(localData) : initial;
-  // };
+  const initializer = (initial) => {
+    const localData = window.localStorage.getItem("invoice");
+    return localData ? JSON.parse(localData) : initial;
+  };
   const [state, dispatch] = useReducer(
     Invoicereducer,
-    Invoicestate
-    // initializer
+    Invoicestate,
+    initializer
   );
-  // useEffect(() => {
-  //   window.localStorage.setItem("invoice", JSON.stringify(state));
-  // }, [state]);
+  useEffect(() => {
+    window.localStorage.setItem("invoice", JSON.stringify(state));
+  }, [state]);
   const formsubmission = () => {
     dispatch({ type: "show-modal" });
   };
