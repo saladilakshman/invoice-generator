@@ -9,7 +9,7 @@ const Modal = () => {
   const snapshot = document.querySelector(".layout-snapshot");
   const opt = {
     margin: 1,
-    filename: `${state?.billingToAddressValues[0]}-inovice.pdf`,
+    filename: `${state?.billingToAddressValues[3]}-inovice.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: {
@@ -54,7 +54,7 @@ const Modal = () => {
         <div className="layout-snapshot">
           <div className="modal-invoice-header">
             <h1>
-              {state?.billingToAddressValues[0]}
+              {state?.billingToAddressValues[3]}
               <br />
               <span className="font-semibold">
                 Invoice# :{state?.invoicenumber}
