@@ -27,9 +27,10 @@ const Billing = ({
                     className="bg-gray-100 pl-2 rounded-sm h-10"
                     placeholder={placeholder}
                     onChange={(e) => {
+                      const { value } = e.target;
                       dispatch({
                         type: "billing-to-address-insertion",
-                        payload: e.target.value,
+                        payload: { index, value },
                       });
                     }}
                   />
@@ -55,9 +56,10 @@ const Billing = ({
                     className="bg-gray-100 pl-2 rounded-sm h-10"
                     placeholder={placeholder}
                     onChange={(e) => {
+                      const { value } = e.target;
                       dispatch({
                         type: "billing-from-address-insertion",
-                        payload: e.target.value,
+                        payload: { index, value },
                       });
                     }}
                   />

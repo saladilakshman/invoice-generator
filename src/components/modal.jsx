@@ -6,10 +6,11 @@ import html2pdf from "html2pdf.js";
 import "../App.css";
 const Modal = () => {
   const { state, dispatch } = useContext(InvoiceProvider);
+  console.log(state);
   const snapshot = document.querySelector(".layout-snapshot");
   const opt = {
     margin: 1,
-    filename: `${state?.billingToAddressValues[3]}-inovice.pdf`,
+    filename: `${state?.billingToAddressValues[0]}-inovice.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: {
@@ -54,7 +55,7 @@ const Modal = () => {
         <div className="layout-snapshot">
           <div className="modal-invoice-header">
             <h1>
-              {state?.billingToAddressValues[3]}
+              {state?.billingToAddressValues[0]}
               <br />
               <span className="font-semibold">
                 Invoice# :{state?.invoicenumber}

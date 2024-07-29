@@ -47,21 +47,19 @@ function App() {
       };
     }
     if (action.type === "billing-to-address-insertion") {
+      const valuePush = [...state.billingToAddressValues];
+      valuePush[action.payload.index] = action.payload.value;
       return {
         ...state,
-        billingToAddressValues: [
-          ...state.billingToAddressValues,
-          action.payload,
-        ],
+        billingToAddressValues: valuePush,
       };
     }
     if (action.type === "billing-from-address-insertion") {
+      const valuePush = [...state.billingFromAddressValues];
+      valuePush[action.payload.index] = action.payload.value;
       return {
         ...state,
-        billingFromAddressValues: [
-          ...state.billingFromAddressValues,
-          action.payload,
-        ],
+        billingFromAddressValues: valuePush,
       };
     }
     if (action.type === "feedback-notes") {
@@ -131,24 +129,24 @@ function App() {
       };
     }
     if (action.type === "total-price") {
-      return { 
+      return {
         ...state,
         total: action.payload,
       };
     } else return state;
   };
-  const initializer = (initial) => {
-    const localData = window.localStorage.getItem("invoice");
-    return localData ? JSON.parse(localData) : initial;
-  };
+  // const initializer = (initial) => {
+  //   const localData = window.localStorage.getItem("invoice");
+  //   return localData ? JSON.parse(localData) : initial;
+  // };
   const [state, dispatch] = useReducer(
     Invoicereducer,
-    Invoicestate,
-    initializer
+    Invoicestate
+    // initializer
   );
-  useEffect(() => {
-    window.localStorage.setItem("invoice", JSON.stringify(state));
-  }, [state]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("invoice", JSON.stringify(state));
+  // }, [state]);
   const formsubmission = () => {
     dispatch({ type: "show-modal" });
   };

@@ -17,7 +17,11 @@ const Price = ({
     const taxAmount = (subtotal * tax) / 100;
     const discountAmount = (subtotal * discount) / 100;
     const actualAmount = subtotal + taxAmount - discountAmount;
-    dispatch({ type: "total-price", payload: Math.floor(actualAmount) });
+    console.log(actualAmount);
+    dispatch({
+      type: "total-price",
+      payload: Math.floor(actualAmount),
+    });
   }, [itemslist, tax, discount, dispatch]);
   return (
     <div className=" flex justify-end">
